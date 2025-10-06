@@ -346,7 +346,7 @@ def infer_full(
 TMP_DIR = "/tmp/gradio"
 LAST_TIME = 0
 
-def _cleanup_old_files(max_age_sec: int = 18000) -> None:
+def _cleanup_old_files(max_age_sec: int = 10800) -> None:
     """
     Delete files whose recorded creation time is older than max_age_sec.
     Missing files are silently ignored. Stale registry entries are pruned.
