@@ -1,0 +1,18 @@
+[Unit]
+Description=Memkiller watchdog (terminate processes exceeding RAM threshold)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/root/miniconda3/bin/python3 /root/Qwen-Image/src/examples/memkiller.py
+Restart=always
+RestartSec=5
+# Log to the same file the script uses; journal also collects stdout/err
+StandardOutput=append:/root/memkiller.log
+StandardError=append:/root/memkiller.log
+User=root
+
+[Install]
+WantedBy=multi-user.target

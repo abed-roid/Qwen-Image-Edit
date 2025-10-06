@@ -1,0 +1,18 @@
+[Unit]
+Description=Qwen Image edit_demo guard with conda env
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/root/Qwen-Image/src/examples
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/bin/bash -lc "source /root/miniconda3/bin/activate myenv && python3 edit_demo.py"
+Restart=always
+RestartSec=5
+StandardOutput=append:/root/Qwen-Image/src/examples/gradio.log
+StandardError=append:/root/Qwen-Image/src/examples/gradio.log
+User=root
+
+[Install]
+WantedBy=multi-user.target
