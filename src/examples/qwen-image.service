@@ -5,13 +5,13 @@ Wants=network-online.target
 
 [Service]
 Type=simple
-WorkingDirectory=/root/Qwen-Image/src/examples
+WorkingDirectory=/root/Qwen-Image-Edit/src/examples
 Environment=PYTHONUNBUFFERED=1
 ExecStart=/bin/bash -lc "source /root/miniconda3/bin/activate myenv && python3 edit_demo.py"
 Restart=always
 RestartSec=5
-StandardOutput=append:/root/Qwen-Image/src/examples/gradio.log
-StandardError=append:/root/Qwen-Image/src/examples/gradio.log
+StandardOutput=append:/root/Qwen-Image-Edit/src/examples/gradio.log
+StandardError=append:/root/Qwen-Image-Edit/src/examples/gradio.log
 User=root
 
 [Install]
