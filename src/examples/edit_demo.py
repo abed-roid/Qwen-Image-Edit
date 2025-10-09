@@ -237,7 +237,7 @@ def init_models():
                 adapter_name="lightning"
             )
             pipe.load_lora_weights(
-                "/root/Qwen-Image/src/examples/ootd_colour-19-3600.safetensors",
+                "/root/Qwen-Image-Edit/src/examples/ootd_colour-19-3600.safetensors",
                 adapter_name="realism"
            )
 
@@ -422,7 +422,7 @@ def infer_fast(
                      adapter_name="lightning"
                 )
                 pipe.load_lora_weights(
-                    "/root/Qwen-Image/src/examples/ootd_colour-19-3600.safetensors",
+                    "/root/Qwen-Image-Edit/src/examples/ootd_colour-19-3600.safetensors",
                     adapter_name="realism"
                 )
             if(figure == 1.0 and enableFigure == False):
@@ -434,7 +434,7 @@ def infer_fast(
                      adapter_name="lightning"
                 )
                 pipe.load_lora_weights(
-                     "/root/Qwen-Image/src/examples/aldniki_qwen_figure_maker_v01.safetensors",
+                     "/root/Qwen-Image-Edit/src/examples/aldniki_qwen_figure_maker_v01.safetensors",
                      adapter_name="figure"
                 )
             if(enableFigure == True):
